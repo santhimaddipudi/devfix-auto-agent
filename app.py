@@ -1,12 +1,12 @@
 import os
+from dotenv import load_dotenv
+load_dotenv()  # Must run before any module that reads env vars at import time
+
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from dotenv import load_dotenv
 from graph import devfix_graph
 from state import AgentState
 import time
-
-load_dotenv()
 
 app = FastAPI(title="DevFix Auto-Agent API", version="1.0")
 
